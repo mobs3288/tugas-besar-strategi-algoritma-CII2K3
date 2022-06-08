@@ -38,18 +38,26 @@ def binarySearch(check, tupleCard):
     time.sleep(1)
  
     # Mencari lambang kartu yang sesuai dengan metode divide and conquer
-    if check == "H" or check == "S" or check == "D" or check == "C":
+    if check == "H" or check == "S":
         time.sleep(0.07)
+        left = mid
 
-        if check == "H" or check == "D":
-            time.sleep(0.07)
-            right = mid
+        if check == "H":
             mid = int((right + left) / 2)
             right = mid
 
-        elif check == "S" or check == "C":
-            time.sleep(0.07)
+        elif check == "S":
+            mid = int((right + left) / 2)
             left = mid
+
+    elif check == "D" or check == "C":
+        right = mid
+    
+        if check == "D":
+            mid = int((right + left) / 2)
+            right = mid
+
+        elif check == "C":
             mid = int((right + left) / 2)
             left = mid
 
